@@ -13,7 +13,7 @@ This module makes use of the `awscli`. [Install documentation can be found here]
 ## Usage
 
 
-```hcl-terraform
+```hcl
 # Define some tasks
 resource "aws_ecs_task_definition" "example" {
   container_definitions = jsonencode([{
