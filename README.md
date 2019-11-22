@@ -48,4 +48,4 @@ module "update-example" {
 | cluster | Name of the ECS cluster | string | - | yes |
 | run_tasks | A list of Task ARNs to run | list(string) | `[]` | no |
 | triggers | Properties that, when changed, should trigger the execution of this module | list(string) | `[]` | no |
-| update_services | A list of objects with the ECS Service name (`name`) and the updated Task Definition ARN (`task_arn`) | list(object) | `[]` | no |
+| update_services | A list of objects with the ECS Service name (`name`) and the updated Task Definition ARN (`task_arn`) | list(object) | `-` | yes |

@@ -17,6 +17,6 @@ variable "update_services" {
 }
 
 variable "triggers" {
-  default = "Trigger the update whenever the items in this list change (usually Task ARNs)"
-  type    = list(string)
+  description = "Trigger the update whenever the items in this list change (usually Task ARNs)"
+  type        = list(string)
 }
