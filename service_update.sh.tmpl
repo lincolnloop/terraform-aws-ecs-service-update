@@ -1,0 +1,8 @@
+%{ for task_arn in run_tasks ~}
+echo "Starting ${split("/", task_arn)[1]} task..."
+aws ecs run-task --cluster ${cluster} --task-definition ${task_arn} | jq -r .tasks[0].taskArn
+%{ endfor ~}
+echo "Updating services..."
+%{ for service in update_services ~}
+aws ecs update-service --cluster ${cluster} --service ${service.name} --task-definition ${service.task_arn}
+%{ endfor ~}
